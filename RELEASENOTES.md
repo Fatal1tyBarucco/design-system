@@ -5028,9 +5028,13 @@ The following features are being marked as deprecated in this release and will b
   - Native -> iOS - Use our iOS integration to style your native iOS applications
 
 ### Components
+<<<<<<< HEAD
 ### Many accessibility updates
 
 - Changed components to dev-ready: Button Groups, Cards, Tiles, Icons
+=======
+**Many accessibility updates**
+>>>>>>> 16a33c12d (Update RELEASENOTES.md)
 
 - Lookups:
   - Accessibility Requirements added
