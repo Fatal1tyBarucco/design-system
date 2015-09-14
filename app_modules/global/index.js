@@ -9,47 +9,45 @@ Neither the name of salesforce.com, inc. nor the names of its contributors may b
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+export default {
+  abbreviatedName: 'SLDS',
+  cssPrefix: 'slds-',
+  displayName: 'Lightning Design System',
+  filenamePrefix: 'slds',
+  localyticsHostWhitelist: [
+    'getslds.com',
+    'www.getslds.com',
+    'lightningdesignsystem.com',
+    'www.lightningdesignsystem.com',
+    'lightning-design-system.herokuapp.com',
+    'salesforce.com',
+    'www.salesforce.com'
+  ],
+  herokuLightingReactAppUrl: [
+    {type: 'heroku-react-app', url: 'https://github.com/ccoenraets/lightning-react-app'},
+    {type: 'heroku-static-starter', url: 'https://github.com/salesforce-ux/demo_slds_heroku'}
+  ],
+  managedPackageUrls: [
+    { version: '0.9.0', url: 'https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000IrV0' },
+    { version: '0.8.0', url: 'https://login.salesforce.com/packaging/installPackage.apexp?p0=04t61000000DVio' }
+  ],
+  moduleName: 'salesforce-lightning-design-system',
+  resetWrappingClass: '.slds',
+  zipName: function(version) {
+    return this.moduleName + '-' + version + '.zip';
+  },
+  downloadPath: function(version) {
+    return '/assets/downloads/' + this.zipName(version);
+  },
 
-class SvgIcon extends React.Component {
-  render() {
-    const { sprite, symbol, ...rest } = this.props;
-
-    return (
-      <svg {...rest} aria-hidden>
-        <use xlinkHref={this.getHref()} />
-      </svg>
-    );
+  /**
+   * Determines internal/external user based on cookie.
+   *
+   * @returns {string|false} 'internal' or 'external'
+   */
+  userType(cookie) {
+    const matches = cookie.match(/usertype=(\w+)/);
+    return matches && matches[1];
   }
 
-  getHref() {
-    if (!(this.props.sprite && this.props.symbol)) {
-      return;
-    }
-
-<<<<<<< HEAD:ui/shared/svg-icon/index.jsx
-    const { sprite, symbol } = this.props;
-    const href = `/assets/icons/${sprite}-sprite/svg/symbols.svg#${symbol}`;
-    return href;
-  }
-}
-
-SvgIcon.propTypes = {
-  className: PropTypes.string,
-  sprite: PropTypes.string,
-  symbol: PropTypes.string
 };
-
-export default SvgIcon;
-=======
-    <h2 className="site-text-heading--large">
-      <Link to="/getting-started/heroku">Heroku</Link>
-    </h2>
-    <p>
-      How to use the {globals.displayName} within a static Heroku application.
-    </p>
-
-  </PageBody>
-);
->>>>>>> f4713db99 (Clean up heroku tuts: relative links, CTALinks, SEO meaningful steps, other links in global/index.js/, and add link to getting-started/index.jsx):site/getting-started/index.jsx
