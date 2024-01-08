@@ -149,7 +149,7 @@ jobs:
         # single quotes are needed around the JSON string here to preserve the double quotes around the props and values
         run: echo '${{ steps.applitools_batch.outputs.batches }}'
 
-      - uses: tibdex/github-app-token@v1
+      - uses: tibdex/github-app-token@v2
         id: get_installation_token
         with:
           app_id: 244972
