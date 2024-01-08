@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: tibdex/github-app-token@v1
+    - uses: tibdex/github-app-token@v2
       id: get_installation_token
       with:
         app_id: 244972
@@ -207,7 +207,7 @@ jobs:
         heroku buildpacks -a ${PUBLISH_STORYBOOK_TO} | grep "https://github.com/salesforce-ux/heroku-buildpack-nginx.git#dse" || heroku buildpacks:set https://github.com/salesforce-ux/heroku-buildpack-nginx.git#dse -a ${PUBLISH_STORYBOOK_TO}
         heroku builds:create --source-tar workspace/artifact/storybook.tar.gz -a ${PUBLISH_STORYBOOK_TO}
 
-    - uses: tibdex/github-app-token@v1
+    - uses: tibdex/github-app-token@v2
       id: get_installation_token
       with:
         app_id: 244972
@@ -272,7 +272,7 @@ jobs:
       - framework-build
 
     steps:
-      - uses: tibdex/github-app-token@v1
+      - uses: tibdex/github-app-token@v2
         id: get_installation_token
         with:
           app_id: 244972
@@ -348,7 +348,7 @@ jobs:
     needs:
       - framework-build
     steps:
-    - uses: tibdex/github-app-token@v1
+    - uses: tibdex/github-app-token@v2
       id: get_installation_token
       with:
         app_id: 244972
