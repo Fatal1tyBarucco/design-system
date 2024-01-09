@@ -13,7 +13,3 @@ jobs:
             vrt:chrome-ready
             vrt:mobile-ready
             vrt:full-ready
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
