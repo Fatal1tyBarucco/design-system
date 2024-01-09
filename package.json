@@ -185,7 +185,7 @@
     "simple-git": "3.22.0",
     "storybook-addon-rtl": "0.5.0",
     "style-loader": "3.3.3",
-    "styled-components": "6.1.6",
+    "styled-components": "6.1.8",
     "stylelint": "16.1.0",
     "stylelint-config-slds": "^1.0.8",
     "stylelint-scss": "6.0.0",
