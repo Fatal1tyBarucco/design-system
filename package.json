@@ -82,7 +82,7 @@
     "conventional-changelog": "5.1.0",
     "copy-webpack-plugin": "11.0.0",
     "css": "3.0.0",
-    "css-loader": "6.8.1",
+    "css-loader": "6.9.0",
     "cssnano": "6.0.3",
     "cssstats": "4.0.5",
     "csv-file-to-json": "4.0.5",
