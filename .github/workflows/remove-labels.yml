@@ -13,9 +13,10 @@ jobs:
             vrt:chrome-ready
             vrt:mobile-ready
             vrt:full-ready
-      - name: 'Upload code coverage for Apex to Codecov.io'
-        uses: codecov/codecov-action@v3
-        env:
-           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - uses: actions/checkout@master
+      - uses: codecov/codecov-action@v3
         with:
-           flags: Apex
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: Apex # optional
+          name: codecov-umbrella # optional
+          verbose: true # optional (default = false)
