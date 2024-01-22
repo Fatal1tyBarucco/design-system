@@ -6,17 +6,10 @@ jobs:
   VRT:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-remove-labels@v1
         with:
           labels: |
             vrt:chrome-ready
             vrt:mobile-ready
             vrt:full-ready
-      - uses: actions/checkout@master
-      - uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          flags: Apex # optional
-          name: codecov-umbrella # optional
-          verbose: true # optional (default = false)

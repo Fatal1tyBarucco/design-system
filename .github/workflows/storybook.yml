@@ -23,13 +23,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: tibdex/github-app-token@v2
+    - uses: tibdex/github-app-token@v1
       id: get_installation_token
       with:
         app_id: 244972
         private_key: ${{ secrets.DSE_CI_APP_KEY }}
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
 
     - run: printenv | sort
 
@@ -58,7 +58,7 @@ jobs:
           gh api ${STATUS_URL} -f state=in_progress -H "Accept: application/vnd.github.flash-preview+json"
         done
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v2
       with:
         path: |-
           workspace/gh-deployments.json
@@ -73,13 +73,13 @@ jobs:
       - init
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
 
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v3
       with:
         cache: 'npm'
 
-    - uses: actions/download-artifact@v4
+    - uses: actions/download-artifact@v2
       with:
         path: workspace
 
@@ -109,7 +109,7 @@ jobs:
       run: tar -cvf workspace/styles.tar assets/styles/
     - name: Compress generated metadata
       run: tar -cvf workspace/metadata.tar .generated/metadata/
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v2
       with:
         path: |-
           workspace/design-tokens.tar
@@ -125,13 +125,13 @@ jobs:
       - prepare
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
 
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-node@v3
       with:
         cache: 'npm'
 
-    - uses: actions/download-artifact@v4
+    - uses: actions/download-artifact@v2
       with:
         path: workspace
 
@@ -154,7 +154,7 @@ jobs:
     - name: Archive static Storybook
       run: tar -czvf workspace/storybook.tar.gz .www/ Procfile config/nginx.conf.erb heroku-start.sh app.json
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v2
       with:
         path: workspace/storybook.tar.gz
 
@@ -167,7 +167,7 @@ jobs:
       - build-storybook
 
     steps:
-    - uses: actions/download-artifact@v4
+    - uses: actions/download-artifact@v2
       with:
         path: workspace
 
@@ -207,7 +207,7 @@ jobs:
         heroku buildpacks -a ${PUBLISH_STORYBOOK_TO} | grep "https://github.com/salesforce-ux/heroku-buildpack-nginx.git#dse" || heroku buildpacks:set https://github.com/salesforce-ux/heroku-buildpack-nginx.git#dse -a ${PUBLISH_STORYBOOK_TO}
         heroku builds:create --source-tar workspace/artifact/storybook.tar.gz -a ${PUBLISH_STORYBOOK_TO}
 
-    - uses: tibdex/github-app-token@v2
+    - uses: tibdex/github-app-token@v1
       id: get_installation_token
       with:
         app_id: 244972
@@ -230,13 +230,14 @@ jobs:
       - prepare
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
           cache: 'npm'
+          node-version: '<=18.17.1'
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v2
         with:
           path: workspace
 
@@ -253,14 +254,12 @@ jobs:
       - run: npm ci
       - name: Do build-dist
         run: npm run build-dist
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider # per https://candid.technology/error-error-0308010c-digital-envelope-routines-unsupported/
 
       - name: Compress .dist
         run: |-
           tar -cvf workspace/design-system-dist.tar .dist/
           cd .dist && zip -r dist . && mv dist.zip ../workspace/ && cd ..
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v2
         with:
           path: |-
             workspace/design-system-dist.tar
@@ -272,14 +271,14 @@ jobs:
       - framework-build
 
     steps:
-      - uses: tibdex/github-app-token@v2
+      - uses: tibdex/github-app-token@v1
         id: get_installation_token
         with:
           app_id: 244972
           private_key: ${{ secrets.DSE_CI_APP_KEY }}
 
       - name: Checkout design-system-site
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
           repository: salesforce-ux/design-system-site
           ref: main
@@ -288,7 +287,7 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -la
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v2
         with:
           path: workspace
 
@@ -301,7 +300,7 @@ jobs:
           mkdir -p .slds
           tar -xvf workspace/artifact/design-system-dist.tar --directory .slds
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
           cache: 'npm'
       - run: npm ci
@@ -348,14 +347,14 @@ jobs:
     needs:
       - framework-build
     steps:
-    - uses: tibdex/github-app-token@v2
+    - uses: tibdex/github-app-token@v1
       id: get_installation_token
       with:
         app_id: 244972
         private_key: ${{ secrets.DSE_CI_APP_KEY }}
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
 
-    - uses: actions/download-artifact@v4
+    - uses: actions/download-artifact@v2
       with:
         path: workspace
 
@@ -383,7 +382,7 @@ jobs:
     needs:
       - attach-artifact
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
     - name: Trigger database update via API
       env:
         DSE_API_RELEASE_TOKEN: ${{ secrets.DSE_API_RELEASE_TOKEN }}

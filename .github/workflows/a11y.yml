@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
       # I wanted to use an action, but the action recommends not using itself because
       # Since v1.8.0 Playwright includes CLI that installs all required browser dependencies.
       - name: Install Playwright dependencies
@@ -29,7 +29,7 @@ jobs:
         run: npm run storybook:build
 
       - name: Cache establish
-        uses: actions/cache@v4
+        uses: actions/cache@v2
         id: cache
         with:
           path: ./.www
@@ -52,15 +52,15 @@ jobs:
       A11Y_SERVER: http://localhost:9002
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
 
       - name: Install deps
         run: npm ci
 
       - name: Restore cache
-        uses: actions/cache@v4
+        uses: actions/cache@v2
         id: cache
         with:
           path: ./.www
@@ -97,14 +97,14 @@ jobs:
 
       - name: Archive test results
         if: success() || failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: a11y
           path: __tests__/a11y/results/
 
       - name: Archive test xml
         if: success() || failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: a11y-xml
           path: __tests__/a11y/xml/
