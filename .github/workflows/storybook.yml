@@ -79,7 +79,7 @@ jobs:
       with:
         cache: 'npm'
 
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4
       with:
         path: workspace
 
@@ -131,7 +131,7 @@ jobs:
       with:
         cache: 'npm'
 
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4
       with:
         path: workspace
 
@@ -167,7 +167,7 @@ jobs:
       - build-storybook
 
     steps:
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4
       with:
         path: workspace
 
@@ -237,7 +237,7 @@ jobs:
           cache: 'npm'
           node-version: '<=18.17.1'
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           path: workspace
 
@@ -287,7 +287,7 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -la
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           path: workspace
 
@@ -354,7 +354,7 @@ jobs:
         private_key: ${{ secrets.DSE_CI_APP_KEY }}
     - uses: actions/checkout@v2
 
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4
       with:
         path: workspace
 
