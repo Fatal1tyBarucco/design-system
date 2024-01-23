@@ -41,7 +41,7 @@
     "@babel/preset-react": "7.9.4",
     "@babel/runtime": "7.9.2",
     "@epegzz/sass-vars-loader": "6.0.0",
-    "@mdx-js/loader": "2.0.0",
+    "@mdx-js/loader": "3.0.0",
     "@mdx-js/mdx": "2.0.0",
     "@sa11y/preset-rules": "^3.1.0",
     "@salesforce-ux/build-server-api": "2.1.7",
