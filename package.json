@@ -165,7 +165,7 @@
     "postcss": "^8.4.31",
     "postcss-combine-media-query": "1.0.1",
     "postcss-discard-comments": "5.0.0",
-    "postcss-loader": "4.0.0",
+    "postcss-loader": "8.1.0",
     "postcss-nested-props": "2.0.0",
     "postcss-scss": "4.0.9",
     "prettier": "^2.3.1",
