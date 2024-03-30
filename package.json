@@ -28,7 +28,7 @@
     }
   },
   "devDependencies": {
-    "@applitools/eyes-playwright": "1.7.0",
+    "@applitools/eyes-playwright": "1.14.1",
     "@axe-core/playwright": "^4.3.2",
     "@babel/cli": "7.12.0",
     "@babel/core": "7.14.6",
@@ -195,8 +195,8 @@
     "vinyl": "2.2.0",
     "vnu-jar": "17.11.1",
     "wait-on": "^6.0.1",
-    "webpack": "4.42.1",
-    "webpack-cli": "3.3.11",
+    "webpack": "5.76.0",
+    "webpack-cli": "4.1.0",
     "yargs": "15.3.1"
   },
   "optionalDependencies": {
