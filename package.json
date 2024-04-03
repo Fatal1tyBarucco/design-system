@@ -170,7 +170,7 @@
     "postcss-scss": "4.0.9",
     "prettier": "^4.0.0-alpha.8",
     "prop-types": "15.8.1",
-    "puppeteer": "22.6.1",
+    "puppeteer": "22.6.2",
     "raw-loader": "4.0.2",
     "react": "19.0.0-canary-a73c3450e-20240329",
     "react-dom": "19.0.0-canary-a73c3450e-20240329",
