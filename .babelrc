@@ -29,6 +29,5 @@
         ]
       ]
     }
-  },
-  "ignore": ["node_modules"]
+  }
 }
