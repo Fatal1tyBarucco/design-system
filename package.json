@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@applitools/eyes-playwright": "1.25.3",
-    "@axe-core/playwright": "^4.8.6-1308368.0",
+    "@axe-core/playwright": "^4.9.0",
     "@babel/cli": "8.0.0-alpha.7",
     "@babel/core": "8.0.0-alpha.7",
     "@babel/node": "8.0.0-alpha.7",
