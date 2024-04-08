@@ -92,7 +92,7 @@
     "enquirer": "2.4.1",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.8",
-    "eslint": "^9.0.0-rc.0",
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-jsx": "11.0.0",
