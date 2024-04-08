@@ -31,7 +31,7 @@
     "@applitools/eyes-playwright": "1.25.3",
     "@axe-core/playwright": "^4.9.0",
     "@babel/cli": "8.0.0-alpha.7",
-    "@babel/core": "8.0.0-alpha.7",
+    "@babel/core": "8.0.0-alpha.8",
     "@babel/node": "8.0.0-alpha.7",
     "@babel/plugin-proposal-object-rest-spread": "7.21.4-esm.4",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
