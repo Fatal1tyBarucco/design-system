@@ -62,7 +62,7 @@
     "@storybook/addon-options": "^6.0.0-alpha.29",
     "@storybook/addon-viewport": "^8.1.0-alpha.6",
     "@storybook/addons": "^7.6.17",
-    "@storybook/react": "^8.1.0-alpha.5",
+    "@storybook/react": "^8.1.0-alpha.6",
     "@storybook/theming": "^8.1.0-alpha.6",
     "async": "3.2.5",
     "autoprefixer": "10.4.19",
