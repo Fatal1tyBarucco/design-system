@@ -180,7 +180,7 @@
     "rehype-add-classes": "1.0.0",
     "replace-in-file": "7.1.0",
     "sass": "1.75.0",
-    "sass-loader": "14.1.1",
+    "sass-loader": "14.2.0",
     "semver": "7.6.0",
     "simple-git": "3.24.0",
     "storybook-addon-rtl": "^1.0.0",
