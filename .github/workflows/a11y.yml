@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
       # I wanted to use an action, but the action recommends not using itself because
       # Since v1.8.0 Playwright includes CLI that installs all required browser dependencies.
       - name: Install Playwright dependencies
@@ -54,7 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
 
       - name: Install deps
         run: npm ci
