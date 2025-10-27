@@ -58,7 +58,7 @@ jobs:
           gh api ${STATUS_URL} -f state=in_progress -H "Accept: application/vnd.github.flash-preview+json"
         done
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         path: |-
           workspace/gh-deployments.json
@@ -109,7 +109,7 @@ jobs:
       run: tar -cvf workspace/styles.tar assets/styles/
     - name: Compress generated metadata
       run: tar -cvf workspace/metadata.tar .generated/metadata/
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         path: |-
           workspace/design-tokens.tar
@@ -154,7 +154,7 @@ jobs:
     - name: Archive static Storybook
       run: tar -czvf workspace/storybook.tar.gz .www/ Procfile config/nginx.conf.erb heroku-start.sh app.json
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         path: workspace/storybook.tar.gz
 
@@ -259,7 +259,7 @@ jobs:
         run: |-
           tar -cvf workspace/design-system-dist.tar .dist/
           cd .dist && zip -r dist . && mv dist.zip ../workspace/ && cd ..
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           path: |-
             workspace/design-system-dist.tar
