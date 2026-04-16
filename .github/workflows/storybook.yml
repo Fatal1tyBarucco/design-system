@@ -267,6 +267,9 @@ jobs:
 
   publish-site:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     needs:
       - framework-build
 
