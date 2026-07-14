@@ -75,7 +75,7 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    - uses: actions/setup-node@v6
+    - uses: actions/setup-node@v7
       with:
         cache: 'npm'
 
@@ -127,7 +127,7 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    - uses: actions/setup-node@v6
+    - uses: actions/setup-node@v7
       with:
         cache: 'npm'
 
@@ -232,7 +232,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           cache: 'npm'
           node-version: '<=18.17.1'
@@ -303,7 +303,7 @@ jobs:
           mkdir -p .slds
           tar -xvf workspace/artifact/design-system-dist.tar --directory .slds
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           cache: 'npm'
       - run: npm ci
